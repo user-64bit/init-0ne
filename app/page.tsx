@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Header } from "@/components/Header";
 
 export default function Home() {
@@ -17,9 +17,8 @@ export default function Home() {
 
       <div className="relative z-10">
         <Header />
-        <div className="container mx-auto">
-        </div>
+        <div className="container mx-auto"></div>
       </div>
     </div>
   );
-};
+}

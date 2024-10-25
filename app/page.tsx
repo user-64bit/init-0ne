@@ -1,5 +1,5 @@
-import React from "react";
 import { Header } from "@/components/Header";
+import { Music } from "@/components/Music";
 
 export default function Home() {
   return (
@@ -8,10 +8,13 @@ export default function Home() {
         <video
           autoPlay
           muted
+          playsInline
           loop
           className="w-full h-full object-cover"
           src="/img_animation.mp4"
-        />
+        >
+          <track kind="captions" />
+        </video>
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
@@ -19,6 +22,7 @@ export default function Home() {
         <Header />
         <div className="container mx-auto"></div>
       </div>
+      <Music />
     </div>
   );
 }

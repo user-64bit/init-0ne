@@ -4,7 +4,7 @@ import { Video } from "@/components/Video";
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative lg:px-40 px-0 ">
       <Video />
       <div className="relative z-10">
         <Header />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
 export const Video = () => {
@@ -37,7 +37,7 @@ export const Video = () => {
             playsInline
             loop
             className="w-full h-full object-cover"
-            src={`/background/${prevBackground}.mp4`}
+            src={`${process.env.BUCKET_URL}/background/${prevBackground}.mp4`}
           >
             <track kind="captions" />
           </video>
@@ -53,7 +53,7 @@ export const Video = () => {
             playsInline
             loop
             className="w-full h-full object-cover"
-            src={`/background/${background}.mp4`}
+            src={`${process.env.BUCKET_URL}/background/${background}.mp4`}
           >
             <track kind="captions" />
           </video>

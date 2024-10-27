@@ -17,31 +17,31 @@ export const Header = () => {
       </div>
       <div
         role="button"
-        onClick={() => redirect("/learn")}
+        onClick={() => redirect("/our-team")}
         className="border py-4 px-5"
       >
-        <h1>Learn</h1>
+        <h1>Our Team</h1>
       </div>
       <div
         role="button"
-        onClick={() => redirect("/join")}
+        onClick={() => redirect("/our-work")}
         className="border py-4 px-5"
       >
-        <h1>Join</h1>
+        <h1>Our Work</h1>
       </div>
       <div
         role="button"
-        onClick={() => redirect("/build")}
+        onClick={() => redirect("/contact-us")}
         className="border py-4 px-5"
       >
-        <h1>Build</h1>
+        <h1>Contact Us</h1>
       </div>
       <div
         role="button"
-        onClick={() => redirect("/contact")}
+        onClick={() => redirect("/hire-us")}
         className="border py-4 px-5"
       >
-        <h1>Contact</h1>
+        <h1>Hire Us</h1>
       </div>
     </div>
   );

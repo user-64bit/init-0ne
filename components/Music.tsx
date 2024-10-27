@@ -95,7 +95,7 @@ export const Music = () => {
       </div>
       <audio
         ref={audioRef}
-        src={`/cyberpunk/${currentTrack}.mp3`}
+        src={`${process.env.BUCKET_URL}/audio/${currentTrack}.mp3`}
         onEnded={nextTrack} // loop all songs
         onError={(e) => {
           console.error("Audio error:", e);

@@ -8,13 +8,24 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
 
 export const Appbar = ({ title }: { title: string }) => {
   const router = useRouter();
   const { publicKey, signMessage } = useWallet();
-  const signature = localStorage.getItem("signature") ?? "";
+  const [isVerified, setIsVerified] = useState(false);
+
+  useEffect(() => {
+    // Bad Hack
+    const signatures = JSON.parse(localStorage.getItem("signatures") ?? "[]");
+    signatures.map((signature: any) => {
+      if (signature.key === publicKey?.toBase58()) {
+        setIsVerified(true);
+      }
+    });
+  }, [isVerified, setIsVerified, publicKey]);
 
   const VerifySignature = async () => {
     try {
@@ -26,7 +37,11 @@ export const Appbar = ({ title }: { title: string }) => {
         `Project Athena wants you to sign in with your Solana account:\n${publicKey.toBase58()}\n\nPlease sign in.`,
       );
       const signature = await signMessage(message);
-      localStorage.setItem("signature", JSON.stringify(signature));
+      const otherSigns = JSON.parse(localStorage.getItem("signatures") ?? "[]");
+      localStorage.setItem(
+        "signatures",
+        JSON.stringify([...otherSigns, { key: publicKey, verify: signature }]),
+      );
 
       if (!ed25519.verify(signature, message, publicKey.toBytes()))
         throw new Error("Message signature invalid!");
@@ -51,7 +66,7 @@ export const Appbar = ({ title }: { title: string }) => {
         <h3 className="text-3xl underline">{title}</h3>
       </div>
       <div className="flex gap-x-2">
-        {publicKey && !signature.length && (
+        {publicKey && !isVerified && (
           <Button
             onClick={VerifySignature}
             className="py-6"

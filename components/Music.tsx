@@ -9,7 +9,7 @@ export const Music = () => {
   const [currentTrack, setCurrentTrack] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const TOTAL_TRACKS = 5;
-  const BASE_URL = "https://s3.ap-south-1.amazonaws.com/bucket.athena.com"
+  const BASE_URL = "https://s3.ap-south-1.amazonaws.com/bucket.athena.com";
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -102,6 +102,7 @@ export const Music = () => {
           console.error("Audio error:", e);
           setIsLoading(false);
           setIsPlaying(false);
+          window.location.reload();
         }}
       />
     </div>

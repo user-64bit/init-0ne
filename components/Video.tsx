@@ -8,7 +8,7 @@ export const Video = () => {
   const [prevBackground, setPrevBackground] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const TOTAL_BACKGROUND_VIDEO = 3;
-  const BASE_URL = "https://s3.ap-south-1.amazonaws.com/bucket.athena.com"
+  const BASE_URL = "https://s3.ap-south-1.amazonaws.com/bucket.athena.com";
 
   useEffect(() => {
     if (background !== prevBackground) {

@@ -10,7 +10,7 @@ export const TeamGrid = ({ team }: { team: any }) => {
         team.map((member: any, index: number) => (
           <BackgroundGradient
             key={index}
-            className="rounded-[22px] py-6 w-[350px] bg-zinc-900"
+            className="rounded-[22px] py-6 xl:w-[350px] w-[250px] bg-zinc-900"
           >
             <div className="flex flex-col items-center justify-center">
               <img

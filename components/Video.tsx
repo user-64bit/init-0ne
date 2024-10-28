@@ -8,6 +8,7 @@ export const Video = () => {
   const [prevBackground, setPrevBackground] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const TOTAL_BACKGROUND_VIDEO = 3;
+  const BASE_URL = "https://s3.ap-south-1.amazonaws.com/bucket.athena.com"
 
   useEffect(() => {
     if (background !== prevBackground) {
@@ -36,8 +37,9 @@ export const Video = () => {
             muted
             playsInline
             loop
+            preload="metadata"
             className="w-full h-full object-cover"
-            src={`${process.env.BUCKET_URL}/background/${prevBackground}.mp4`}
+            src={`${BASE_URL}/background/${prevBackground}.mp4`}
           >
             <track kind="captions" />
           </video>
@@ -52,8 +54,9 @@ export const Video = () => {
             muted
             playsInline
             loop
+            preload="metadata"
             className="w-full h-full object-cover"
-            src={`${process.env.BUCKET_URL}/background/${background}.mp4`}
+            src={`${BASE_URL}/background/${background}.mp4`}
           >
             <track kind="captions" />
           </video>

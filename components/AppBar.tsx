@@ -46,6 +46,7 @@ export const Appbar = ({ title }: { title: string }) => {
       if (!ed25519.verify(signature, message, publicKey.toBytes()))
         throw new Error("Message signature invalid!");
       toast.success(`Message Signed Successfully`);
+      router.refresh();
     } catch (error: any) {
       toast.error(`Sign Message failed:`);
     }

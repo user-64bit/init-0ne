@@ -4,6 +4,8 @@ export default function ContactPage() {
   return (
     <div>
       <Appbar title="Contact us" />
+
+      <div></div>
     </div>
   );
 }

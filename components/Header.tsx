@@ -22,13 +22,13 @@ export const Header = () => {
       >
         <h1>Our Team</h1>
       </div>
-      <div
+      {/* <div
         role="button"
         onClick={() => redirect("/our-work")}
         className="border py-4 px-5"
       >
         <h1>Our Work</h1>
-      </div>
+      </div> */}
       <div
         role="button"
         onClick={() => redirect("/contact-us")}
@@ -36,13 +36,13 @@ export const Header = () => {
       >
         <h1>Contact Us</h1>
       </div>
-      <div
+      {/* <div
         role="button"
         onClick={() => redirect("/hire-us")}
         className="border py-4 px-5"
       >
         <h1>Hire Us</h1>
-      </div>
+      </div> */}
     </div>
   );
 };

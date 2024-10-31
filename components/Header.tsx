@@ -12,13 +12,13 @@ export const Header = () => {
           width={60}
           height={60}
           alt="Athena"
-          className="object-cover"
+          className="object-cover p-3"
         />
       </div>
       <div
         role="button"
         onClick={() => redirect("/our-team")}
-        className="border py-4 px-5"
+        className="py-4 px-5 hover:underline"
       >
         <h1>Our Team</h1>
       </div>
@@ -32,7 +32,7 @@ export const Header = () => {
       <div
         role="button"
         onClick={() => redirect("/contact-us")}
-        className="border py-4 px-5"
+        className="py-4 px-5 hover:underline"
       >
         <h1>Contact Us</h1>
       </div>

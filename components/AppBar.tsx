@@ -12,7 +12,13 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
 
-export const Appbar = ({ title }: { title: string }) => {
+export const Appbar = ({
+  title,
+  connectWallet = true,
+}: {
+  title: string;
+  connectWallet?: boolean;
+}) => {
   const router = useRouter();
   const { publicKey, signMessage } = useWallet();
   const [isVerified, setIsVerified] = useState(false);
@@ -66,18 +72,22 @@ export const Appbar = ({ title }: { title: string }) => {
       <div>
         <h3 className="text-3xl underline">{title}</h3>
       </div>
-      <div className="flex gap-x-2">
-        {publicKey && !isVerified && (
-          <Button
-            onClick={VerifySignature}
-            className="py-6"
-            variant={"secondary"}
-          >
-            Verify Signature
-          </Button>
-        )}
-        {publicKey ? <WalletDisconnectButton /> : <WalletMultiButton />}
-      </div>
+      {connectWallet ? (
+        <div className="flex gap-x-2">
+          {publicKey && !isVerified && (
+            <Button
+              onClick={VerifySignature}
+              className="py-6"
+              variant={"secondary"}
+            >
+              Verify Signature
+            </Button>
+          )}
+          {publicKey ? <WalletDisconnectButton /> : <WalletMultiButton />}
+        </div>
+      ) : (
+        <div className="invisible flex gap-x-2">Nothing</div>
+      )}
     </div>
   );
 };

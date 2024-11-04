@@ -11,7 +11,7 @@ export const Header = () => {
           src={"/logo.png"}
           width={60}
           height={60}
-          alt="Athena"
+          alt="Init 0ne Logo"
           className="object-cover p-3"
         />
       </div>

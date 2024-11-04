@@ -40,7 +40,7 @@ export const Appbar = ({
         throw new Error("Wallet does not support message signing!");
 
       const message = new TextEncoder().encode(
-        `Project Athena wants you to sign in with your Solana account:\n${publicKey.toBase58()}\n\nPlease sign in.`,
+        `Init 0ne wants you to sign in with your Solana account:\n${publicKey.toBase58()}\n\nPlease sign in.`,
       );
       const signature = await signMessage(message);
       const otherSigns = JSON.parse(localStorage.getItem("signatures") ?? "[]");

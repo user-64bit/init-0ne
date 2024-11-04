@@ -3,7 +3,7 @@ import { Appbar } from "@/components/AppBar";
 import { SendCrypto } from "@/components/SendCrypto";
 import { TeamGrid } from "@/components/TeamGrid";
 
-const githubIds = ["user-64bit", "hkirat", "torvalds"];
+const githubIds = ["user-64bit"];
 
 export default async function OurTeamPage() {
   const team = await getGithubData({ githubIds });

@@ -9,7 +9,7 @@ const inter = Freckle_Face({
 });
 
 export const metadata: Metadata = {
-  title: "Project Athena",
+  title: "Init 0ne",
   description: "Group of Web3 & AI Enthusiastic",
 };
 

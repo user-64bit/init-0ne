@@ -66,7 +66,7 @@ export const Video = () => {
       </div>
       <div className="absolute top-1/4 left-2/3 transform -translate-x-1/2 -translate-y-1/2 text-center">
         <h2 className="text-6xl font-extrabold text-gradient shadow-sm">
-          Project Athena
+          Init 0ne
         </h2>
       </div>
       <div className="fixed top-5 right-5 z-[99999]">
